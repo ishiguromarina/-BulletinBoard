@@ -1,126 +1,86 @@
-body {
-	background-color: #E3FFFF;
+
+body{
+	color: #4d4d4d;
+	margin: 20px 50px 20px 50px;
+	font-family:Arial, sans-serif;
 }
 
-.main-contents {
-	margin-top: 0px;
-	margin-bottom: 0px;
-	margin-left: 20px;
-	margin-right: 20px;
-	background-color: white;
-	height: 100%;
-	width: 800px;
+.loginBody{
+	margin: 20px 0px 0px 0px;
+	text-align: center;
 }
 
-.tweet-box {
-	width: 780px;
-	height: 56px;
+.loginErrorMessages{
+	color: #ff2600;
 }
 
-.header {
-	text-align: right;
+input[type="submit"] {
+	width: 100px;
+	padding: 5px;
+	text-decoration: none;
+	color: #434a69;
+	border: 2px solid #a1f99d;
+	border-radius: 3px;
+	transition: .4s;
+	margin: 20px 0px 0px 0px;
 }
 
-.profile {
-	margin-top: 10px;
-	margin-right: 10px;
-	margin-bottom: 10px;
-	margin-left: 10px;
-	height: 100px;
+input[type="submit"]:hover {
+	background: #bbf9bc;
+	color: #434a69;
 }
 
-.profile .profile-image {
-	float: left;
+.commentForm{
+
 }
 
-.profile .name h2 {
-	font-size: 30px;
-	font-weight: bold;
-	line-height: 36px;
-	margin: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	margin-left: 0px;
+.message {
+  position: relative;
+  color: 4d4d4d;
+  background: #e2f8ff;
+  line-height: 1.4;
+  padding: 15px 10px 10px 10px;
+  margin: 20px 100px 20px 0px;
+  border-radius: 0 5px 5px 5px;
 }
 
-a.profile .account {
-	font-size: 13px;
-	line-height: 22px;
+.message:after {
+  position: absolute;
+  font-family: "Font Awesome 5 Free",'Quicksand','Avenir','Arial',sans-serif;
+  content: '\f27a\ MESSAGE';
+  background: #2196F3;
+  color: #fff;
+  left: 0px;
+  bottom: 100%;
+  border-radius: 5px 5px 0 0;
+  padding: 3px 7px 1px;
+  font-size: 0.7em;
+  line-height: 1;
+  letter-spacing: 0.05em
 }
 
-.profile .description {
-	font-size: 13px;
-	line-height: 22px;
+.comment {
+  position: relative;
+  color: 4d4d4d;
+  background: #dbffd9;
+  line-height: 1.4;
+  padding: 15px 10px 10px 10px;
+  margin: 20px 0px 20px 200px;
+  border-radius: 0 5px 5px 5px;
 }
 
-.form-area {
-	margin-top: 00px;
-	margin-right: 00px;
-	margin-bottom: 00px;
-	margin-left: 00px;
-	background-color: #ECECFF;
-}
-
-.message-icon {
-	border-bottom-style: ridge;
-	margin-top: 5px;
-	margin-right: 5px;
-	margin-bottom: 5px;
-	margin-left: 5px;
-	height: 80px;
-}
-
-.message-icon .icon {
-	margin-top: 1px;
-	margin-right: 1px;
-	margin-bottom: 1px;
-	margin-left: 1px;
-	float: left;
-}
-
-.message-icon .text {
-	height: 40px;
-}
-
-.message-icon .message {
-	margin-left: 60px;
-}
-
-.message-icon .account-name {
-	margin-top: 1px;
-	margin-bottom: 5px;
-}
-
-.message-icon .account-name .account {
-	font-weight: bold;
-}
-
-.account-name .name {
-	font-weight: lighter;
-	color: gray;
-	font: small-caption;
-}
-
-.message .date {
-	font-weight: lighter;
-	color: gray;
-	font: small-caption;
-}
-
-.copyright {
-	width: 250px;
-	margin: 0 auto;
-}
-
-label {
-	display: block;
-}
-
-.errorMessages {
-	margin-top: 10px;
-	margin-right: 10px;
-	margin-bottom: 10px;
-	margin-left: 10px;
-	color: red;
+.comment:after {
+  /*タブ*/
+  position: absolute;
+  font-family: "Font Awesome 5 Free",'Quicksand','Avenir','Arial',sans-serif;
+  content: '\f4ad\ COMMENT';
+  background: #79f371;
+  color: #fff;
+  left: 0px;
+  bottom: 100%;
+  border-radius: 5px 5px 0 0;
+  padding: 3px 7px 1px;
+  font-size: 0.7em;
+  line-height: 1;
+  letter-spacing: 0.05em
 }
