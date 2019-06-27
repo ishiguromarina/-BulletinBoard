@@ -172,7 +172,7 @@ public class EditUserServlet extends HttpServlet {
     	//パスワード
     	if(!StringUtils.isBlank(password1) || !StringUtils.isBlank(password2)) {
 	    	if(!password1.matches("[ -~]{6,20}") || !password2.matches("[ -~]{6,20}")){
-	    		messages.add("パスワードは6文字以上の記号を含む全ての半角文字で入力してください");
+	    		messages.add("パスワードは6文字以上20文字以下の記号を含む全ての半角文字で入力してください");
 	    	}
 	    	if (!(password1.equals(password2))){
 	    		messages.add("確認用のパスワードが一致していません");

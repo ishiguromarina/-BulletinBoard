@@ -96,7 +96,7 @@ public class LoginServlet extends HttpServlet {
     	if (StringUtils.isBlank(password)) {
     		messages.add("パスワードを入力してください");
     	}else if(!password.matches("[ -~]{6,20}")){
-    		messages.add("パスワードは6文字以上の記号を含む全ての半角文字で入力してください");
+    		messages.add("パスワードは6文字以上20文字以下の記号を含む全ての半角文字で入力してください");
     	}
 
     	if(messages.size() == 0) {

@@ -29,9 +29,9 @@
 
 		<div class="messageForm">
 			<form action="message" method="post">
-				件名<input type="text" name="title" value="${message.title}" id="title" /><br />
-				カテゴリー<input type="text" name="category" value="${message.category}" id="category" /><br />
-				本文<textarea name="text" value="${message.text}" cols="100" rows="5" class="tweet-box"></textarea><br />
+				件名<input type="text" name="title" value="${message.title}" /><br />
+				カテゴリー<input type="text" name="category" value="${message.category}" /><br />
+				本文<textarea name="text" cols="100" rows="5" class="tweet-box"><c:out value="${message.text}"></c:out></textarea><br />
 				<input type="submit" value="投稿">
 			</form>
 		</div>

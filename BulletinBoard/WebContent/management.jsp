@@ -14,7 +14,7 @@
 				return window.confirm('ステータスを変更してもよろしいですか？');
 			}
 		</script>
-    </head>
+	</head>
 	<body>
 		<div class="header">
 			<a href="logout">ログアウト</a>
@@ -34,7 +34,7 @@
 		</c:if>
 
 		<br />
-		<table class="userList">
+		<table class="userList" border="1">
 			<tr>
 				<th>ログインID</th>
 				<th>名称</th>

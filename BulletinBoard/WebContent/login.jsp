@@ -26,7 +26,7 @@
 			<form action="login" method="post">
 				<div class="loginForm">
 					ログインID <input name="loginId" value="${loginId}" /><br />
-					パスワード <input name="password" type="password" value="${password}"/><br />
+					パスワード <input name="password" type="password" /><br />
 				</div>
 				<input type="submit" value="login" />
 			</form>

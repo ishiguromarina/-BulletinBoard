@@ -38,7 +38,7 @@
 			<h2><c:out value="${loginUser.name}" /></h2>
 		</div>
 
-		<div class="search">
+		<div class="searchForm">
 			<form action="index.jsp"><br />
 				<label for="startDate">開始日時</label>
 				<input name="startDate" type="date" value="${startDate}" id="startDate"/> ~
@@ -60,11 +60,13 @@
 ')}">
 					<c:out value="${str}" /><br>
 				</c:forEach>
-                投稿日：<fmt:formatDate value="${message.createdDate}" pattern="yyyy/MM/dd HH:mm:ss" /><br>
-				<form action="messageDelete" method="post" onSubmit="return deleteMessage();">
-					<input type="hidden" name="id" value="${message.id}"/>
-					<input type="submit" value="投稿を削除"/>
-				</form>
+				投稿日：<fmt:formatDate value="${message.createdDate}" pattern="yyyy/MM/dd HH:mm:ss" /><br>
+				<c:if test="${loginUser.id == message.userId}">
+					<form action="messageDelete" method="post" onSubmit="return deleteMessage();">
+						<input type="hidden" name="id" value="${message.id}"/>
+						<input type="submit" value="投稿を削除"/>
+					</form>
+				</c:if>
 			</div>
 
 			<c:forEach items="${comments}" var="comment">
@@ -77,10 +79,12 @@
 						<c:out value="${str}" /><br>
 						</c:forEach>
 						投稿日：<fmt:formatDate value="${comment.createdDate}" pattern="yyyy/MM/dd HH:mm:ss" /><br>
-						<form action="commentDelete" method="post" onSubmit="return deleteMessage();">
-							<input type="hidden" name="id" value="${comment.id}"/>
-							<input type="submit" value="コメントを削除"/>
-						</form>
+						<c:if test="${loginUser.id == comment.userId}">
+							<form action="commentDelete" method="post" onSubmit="return deleteMessage();">
+								<input type="hidden" name="id" value="${comment.id}"/>
+								<input type="submit" value="コメントを削除"/>
+							</form>
+						</c:if>
 					</div>
 				</c:if>
   			</c:forEach>

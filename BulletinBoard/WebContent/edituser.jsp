@@ -17,6 +17,7 @@
 			<a href="userManage">戻る</a>
 			<a href="logout">ログアウト</a>
 		</div>
+
 		<h1>UserEdit</h1><br>
 
 		<c:if test="${not empty errorMessages}">

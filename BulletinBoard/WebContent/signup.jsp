@@ -60,7 +60,6 @@
 
 			<input type="submit" value="登録" /> <br />
 		</form>
-		<a href="userManage">戻る</a>
 		<div class="copyright">Copyright(c)Your Name</div>
 	</body>
 </html>

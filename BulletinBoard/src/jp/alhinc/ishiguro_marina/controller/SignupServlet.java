@@ -151,7 +151,7 @@ public class SignupServlet extends HttpServlet {
     	if (StringUtils.isBlank(password1)) {
     		messages.add("パスワードを入力してください");
     	}else if(!password1.matches("[ -~]{6,20}")){
-    		messages.add("パスワードは6文字以上の記号を含む全ての半角文字で入力してください");
+    		messages.add("パスワードは6文字以上20文字以下の記号を含む全ての半角文字で入力してください");
     	}else if (!(password1.equals(password2))){
     		messages.add("確認用のパスワードが一致していません");
     	}

@@ -41,24 +41,24 @@ public class MessageServlet extends HttpServlet {
         User user = (User) session.getAttribute("loginUser");
 
         //Beanへリクエストとセッションから取得した内容を格納
-        Message messages = new Message();
-        messages.setText(request.getParameter("text"));
-        messages.setTitle(request.getParameter("title"));
-        messages.setCategory(request.getParameter("category"));
-        messages.setUserId(user.getId());
+        Message message = new Message();
+        message.setText(request.getParameter("text"));
+        message.setTitle(request.getParameter("title"));
+        message.setCategory(request.getParameter("category"));
+        message.setUserId(user.getId());
 
         //入力チェック
-        if (isValid(messages, errorMessages) == true) {
+        if (isValid(message, errorMessages)) {
 
             //登録実行
-            new MessageService().register(messages);
+            new MessageService().register(message);
             //画面表示
             response.sendRedirect("./");
 
         } else {
         	//入力チェック不可だった場合、エラーメッセージをセッションへ格納
             session.setAttribute("errorMessages", errorMessages);
-            request.setAttribute("messages", messages);
+            request.setAttribute("message", message);
             request.getRequestDispatcher("/message.jsp").forward(request, response);
         }
     }
@@ -71,24 +71,22 @@ public class MessageServlet extends HttpServlet {
         String title = messages.getTitle();
         String category = messages.getCategory();
 
-        if (StringUtils.isBlank(text) == true) {
+        if (StringUtils.isBlank(text)) {
             errorMessages.add("本文を入力してください");
-        }
-        if (1000 < text.length()) {
+        }else if (1000 < text.length()) {
             errorMessages.add("本文は1000文字以下で入力してください");
         }
-        if (StringUtils.isBlank(title) == true) {
+        if (StringUtils.isBlank(title)) {
             errorMessages.add("件名を入力してください");
+        }else if (30 < title.length()) {
+            errorMessages.add("件名は30文字以下で入力してください");
         }
-        if (20 < title.length()) {
-            errorMessages.add("件名は20文字以下で入力してください");
-        }
-        if (StringUtils.isBlank(category) == true) {
+        if (StringUtils.isBlank(category)) {
             errorMessages.add("カテゴリーを入力してください");
+        }else if(10 < category.length()) {
+            errorMessages.add("カテゴリーは10文字以下で入力してください");
         }
-        if (20 < category.length()) {
-            errorMessages.add("カテゴリーは20文字以下で入力してください");
-        }
+        //エラー判定
         if (errorMessages.size() == 0) {
             return true;
         } else {
